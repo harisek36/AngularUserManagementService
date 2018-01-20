@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 
 // Material Design
-import { MdCardModule, MdGridListModule, MdIconModule, MdToolbarModule, MdButtonModule } from '@angular/material';
-import { MdInputModule } from '@angular/material';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { MatCardModule, MatGridListModule, MatIconModule, MatToolbarModule, MatButtonModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -30,13 +30,13 @@ import { UserDetailComponent } from './user/detail.component';
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    HttpModule,
-    MdButtonModule,
-    MdCardModule,
-    MdGridListModule,
-    MdIconModule,
-    MdInputModule,
-    MdToolbarModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatToolbarModule,
     NoopAnimationsModule
   ],
   providers: [],
