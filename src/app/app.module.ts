@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 import { RouterModule, Routes } from '@angular/router';
 
 
@@ -17,6 +19,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LogoutComponent } from './account/logout.component';
 import { UserDetailComponent } from './user/detail.component';
+import { InMemoryUserDataService} from './in-memory-data.service';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,9 @@ import { UserDetailComponent } from './user/detail.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryUserDataService
+    ),
     MatButtonModule,
     MatCardModule,
     MatGridListModule,
@@ -39,7 +46,7 @@ import { UserDetailComponent } from './user/detail.component';
     MatToolbarModule,
     NoopAnimationsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

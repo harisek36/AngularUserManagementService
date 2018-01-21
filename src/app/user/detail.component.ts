@@ -6,6 +6,8 @@ import { UserService } from '../user.service';
 import 'rxjs/add/operator/switchMap';
 
 
+
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -18,8 +20,8 @@ export class UserDetailComponent implements OnInit {
   constructor(private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    let id = +this.route.snapshot.params['id'];
-    this.user = this.userService.getUser(id);
+    const id = +this.route.snapshot.params['id'];
+    this.userService.getUser(id).subscribe(res => this.user = res);
   }
 
 }
