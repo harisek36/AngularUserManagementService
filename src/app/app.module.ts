@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 import { RouterModule, Routes } from '@angular/router';
 
@@ -21,6 +23,7 @@ import { LogoutComponent } from './account/logout.component';
 import { UserDetailComponent } from './user/detail.component';
 import { InMemoryUserDataService} from './in-memory-data.service';
 import { UserService } from './user.service';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { UserService } from './user.service';
     DashboardComponent,
     UserInfoComponent,
     LogoutComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    CreateUserComponent
   ],
   imports: [
     AppRoutingModule,
@@ -38,6 +42,8 @@ import { UserService } from './user.service';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryUserDataService
     ),
+    ReactiveFormsModule,
+    MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
     MatGridListModule,

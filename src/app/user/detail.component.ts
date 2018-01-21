@@ -11,8 +11,8 @@ import 'rxjs/add/operator/switchMap';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css'],
-  providers: [ UserService ]
+  styleUrls: ['./detail.component.css']
+  // providers: [ UserService ]
 })
 export class UserDetailComponent implements OnInit {
 
