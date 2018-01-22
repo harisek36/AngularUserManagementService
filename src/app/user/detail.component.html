@@ -4,25 +4,23 @@
     <mat-card-title><h3>Edit User</h3></mat-card-title>
   </mat-card-header>
   <mat-card-content>
+
     <form class="user_edit_form">
+
       <mat-input-container class="full-width">
         <input matInput type="email" placeholder="Email Address" value="{{user.email}}" name="email"/>
       </mat-input-container>
-      <table class="full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-input-container class="full-width">
-              <input matInput placeholder="First name" value="{{user.first_name}}">
-            </mat-input-container>
-          </td>
-          <td>
-            <mat-input-container class="full-width">
-              <input matInput placeholder="Last Name" value="{{user.last_name}}">
-            </mat-input-container>
-          </td>
-        </tr>
-      </table>
+
+      <mat-input-container class="full-width">
+        <input matInput  type="text" placeholder="First name" value="{{user.first_name}}">
+      </mat-input-container>
+
+      <mat-input-container class="full-width">
+        <input matInput  type="text" placeholder="Last Name" value="{{user.last_name}}">
+      </mat-input-container>
+
       <input type="submit" value="Save">
+
     </form>
 
   </mat-card-content>

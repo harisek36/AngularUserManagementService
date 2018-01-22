@@ -40,6 +40,11 @@ export class UserService {
     // return JSON.parse(this.userDictionary[id]);
   }
 
+  addUser(userInput: User): Observable<User> {
+    console.log('posting' + userInput.id + userInput.email + userInput.first_name + userInput.last_name);
+    return this.http.post<User>(this.userUrl, userInput, httpOptions);
+  }
+
   // private logError(error: any) {
   //   console.error('service found an error: '+error);
   // }
